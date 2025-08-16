@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rohit.gfx | Professional YouTube Thumbnail Design Studio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base Styles */
+        :root {
+            --bg-dark: #0D0D0D;
+            --bg-darker: #121212;
+            --accent-blue: #00F5FF;
+            --accent-green: #00FF9D;
+            --accent-purple: #A78BFA;
+            --text-primary: #FFFFFF;
+            --text-secondary: #B3B3B3;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            --transition: all 0.3s ease;
+        }
+
+        [data-theme="light"] {
+            --bg-dark: #F5F5F5;
+            --bg-darker: #FFFFFF;
+            --text-primary: #121212;
+            --text-secondary: #4A4A4A;
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --glass-border: rgba(0, 0, 0, 0.1);
+            --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--bg-dark), var(--bg-darker));
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(45deg, var(--accent-blue), var(--accent-green));
+            color: #000;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            text-align: center;
+            min-width: 160px;
+            box-shadow: 0 4px 15px rgba(0, 245, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 245, 255, 0.4);
+        }
+
+        .btn:active {
+            transform: translateY(1px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--glass-border);
+            box-shadow: none;
+        }
+
+        .btn-secondary:hover {
+            background: var(--glass-bg);
+        }
+
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 16px;
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+            padding: 25px;
+            transition: var(--transition);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Background Elements */
+        .bg-circles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .bg-circle {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.15;
+            animation: float 15s infinite linear;
+        }
+
+        .circle-1 {
+            width: 300px;
+            height: 300px;
+            background: var(--accent-blue);
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .circle-2 {
+            width: 400px;
+            height: 400px;
+            background: var(--accent-purple);
+            top: 50%;
+            right: 10%;
+            animation-delay: 3s;
+            animation-duration: 20s;
+        }
+
+        .circle-3 {
+            width: 250px;
+            height: 250px;
+            background: var(--accent-green);
+            bottom: 10%;
+            left: 30%;
+            animation-delay: 6s;
+            animation-duration: 25s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translate(0, 0);
+            }
+            25% {
+                transform: translate(50px, 50px);
+            }
+            50% {
+                transform: translate(0, 100px);
+            }
+            75% {
+                transform: translate(-50px, 50px);
+            }
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 0;
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            background: rgba(13, 13, 13, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 15px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--accent-blue), var(--accent-green));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-blue);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-blue);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            width: 30px;
+            height: 20px;
+            position: relative;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background: var(--text-primary);
+            position: absolute;
+            left: 0;
+            transition: var(--transition);
+        }
+
+        .hamburger span:nth-child(1) {
+            top: 0;
+        }
+
+        .hamburger span:nth-child(2) {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .hamburger span:nth-child(3) {
+            bottom: 0;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 80%;
+            max-width: 300px;
+            height: 100vh;
+            background: rgba(18, 18, 18, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 80px 30px;
+            transition: var(--transition);
+            z-index: 1000;
+            box-shadow: 5px 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .mobile-menu.active {
+            left: 0;
+        }
+
+        .mobile-menu .nav-links {
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .mobile-menu .nav-links a {
+            font-size: 1.2rem;
+        }
+
+        .theme-toggle {
+            background: transparent;
+            border: none;
+            color: var(--text-primary);
+            cursor: pointer;
+            font-size: 1.2rem;
+            margin-left: 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 180px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(45deg, var(--accent-blue), var(--accent-green));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .hero-thumbnails {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            z-index: -1;
+        }
+
+        .thumbnail-preview {
+            width: 150px;
+            height: 85px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .thumbnail-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .thumbnail-preview:nth-child(1) {
+            transform: translateX(50px) rotate(5deg);
+        }
+
+        .thumbnail-preview:nth-child(2) {
+            transform: translateX(30px) rotate(-3deg);
+        }
+
+        .thumbnail-preview:nth-child(3) {
+            transform: translateX(70px) rotate(2deg);
+        }
+
+        .thumbnail-preview:hover {
+            transform: scale(1.1) rotate(0deg) !important;
+            z-index: 1;
+        }
+
+        /* Trust Badges */
+        .trust-badges {
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .trust-badges p {
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .platform-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .platform-logo {
+            font-size: 2rem;
+            opacity: 0.7;
+            transition: var(--transition);
+        }
+
+        .platform-logo:hover {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, var(--accent-blue), var(--accent-purple));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* Portfolio */
+        .portfolio-filters {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 8px 20px;
+            background: transparent;
+            border: 1px solid var(--glass-border);
+            color: var(--text-secondary);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--accent-blue);
+            color: #000;
+            border-color: var(--accent-blue);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .portfolio-item {
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            aspect-ratio: 16/9;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .view-project {
+            padding: 10px 25px;
+            background: var(--accent-blue);
+            color: #000;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+
+        /* Testimonials */
+        .testimonials-container {
+            margin-top: 50px;
+            position: relative;
+        }
+
+        .testimonial-card {
+            padding: 30px;
+            margin: 0 15px;
+        }
+
+        .client-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .client-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+
+        .client-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .client-name {
+            font-weight: 600;
+        }
+
+        .client-channel {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .rating {
+            color: #FFD700;
+            margin: 10px 0;
+        }
+
+        /* FAQ */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 15px;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 20px 20px;
+            max-height: 500px;
+        }
+
+        .faq-toggle {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        /* CTA */
+        .cta-section {
+            text-align: center;
+            padding: 80px 0;
+            background: linear-gradient(135deg, rgba(0, 245, 255, 0.1), rgba(0, 255, 157, 0.1));
+            border-radius: 20px;
+            margin: 80px 0;
+        }
+
+        .cta-section h2 {
+            margin-bottom: 30px;
+        }
+
+        /* Footer */
+        footer {
+            padding: 60px 0 30px;
+            background: rgba(13, 13, 13, 0.5);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-about p {
+            margin-bottom: 20px;
+        }
+
+        .footer-links h3 {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-blue);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--glass-bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--accent-blue);
+            color: #000;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid var(--glass-border);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .hero-thumbnails {
+                display: none;
+            }
+
+            .hero-content {
+                max-width: 100%;
+                text-align: center;
+            }
+
+            .hero-btns {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 60px 0;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 150px 0 80px;
+            }
+
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .btn {
+                padding: 10px 20px;
+                min-width: 140px;
+            }
+
+            .glass-card {
+                padding: 20px;
+            }
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Circles -->
+    <div class="bg-circles">
+        <div class="bg-circle circle-1"></div>
+        <div class="bg-circle circle-2"></div>
+        <div class="bg-circle circle-3"></div>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">Rohit.gfx</a>
+                
+                <div class="nav-links">
+                    <a href="#services">Services</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#testimonials">Testimonials</a>
+                    <a href="#faq">FAQ</a>
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+                
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="nav-links">
+                <a href="#services">Services</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#faq">FAQ</a>
+                <div style="display: flex; align-items: center; margin-top: 20px;">
+                    <span style="margin-right: 10px;">Dark Mode</span>
+                    <button class="theme-toggle" id="mobileThemeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="fade-in">Boost Your CTR with <span>Stunning Thumbnails</span></h1>
+                <p class="fade-in">Professional thumbnail designs that grab attention and increase your click-through rate. Custom creations tailored to your brand and audience.</p>
+                <div class="hero-btns fade-in">
+                    <a href="#portfolio" class="btn">View Portfolio</a>
+                    <a href="#contact" class="btn btn-secondary">Get Started</a>
+                </div>
+            </div>
+            
+            <div class="hero-thumbnails">
+                <div class="thumbnail-preview">
+                    <img src="/image/7.jpg">
+                </div>
+                <div class="thumbnail-preview">
+                    <img src="https://via.placeholder.com/300x170/A78BFA/FFFFFF?text=Tech+Thumbnail" alt="Tech Thumbnail Example">
+                </div>
+                <div class="thumbnail-preview">
+                    <img src="https://via.placeholder.com/300x170/00FF9D/000000?text=Vlog+Thumbnail" alt="Vlog Thumbnail Example">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Badges -->
+    <section class="trust-badges">
+        <div class="container">
+            <p class="fade-in">Trusted by YouTubers from</p>
+            <div class="platform-logos fade-in">
+                <div class="platform-logo"><i class="fab fa-youtube"></i></div>
+                <div class="platform-logo"><i class="fab fa-twitch"></i></div>
+                <div class="platform-logo"><i class="fab fa-instagram"></i></div>
+                <div class="platform-logo"><i class="fab fa-tiktok"></i></div>
+                <div class="platform-logo"><i class="fab fa-facebook"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="fade-in">Our Services</h2>
+            
+            <div class="services-grid">
+                <div class="glass-card service-card fade-in">
+                    <div class="service-icon"><i class="fas fa-image"></i></div>
+                    <h3>Thumbnail Design</h3>
+                    <p>Eye-catching custom thumbnails designed to maximize your CTR and stand out in search results.</p>
+                </div>
+                
+                <div class="glass-card service-card fade-in">
+                    <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
+                    <h3>Channel Branding</h3>
+                    <p>Complete branding package including banner, logo, and color scheme for a cohesive look.</p>
+                </div>
+                
+                <div class="glass-card service-card fade-in">
+                    <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3>Shorts Covers</h3>
+                    <p>Optimized covers for your YouTube Shorts that attract more viewers in the shorts feed.</p>
+                </div>
+                
+                <div class="glass-card service-card fade-in">
+                    <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>CTR Optimization</h3>
+                    <p>Data-driven thumbnail designs tested to improve your click-through rate and views.</p>
+                </div>
+                
+                <div class="glass-card service-card fade-in">
+                    <div class="service-icon"><i class="fas fa-ad"></i></div>
+                    <h3>Video Ads</h3>
+                    <p>Professional ad creatives for your video campaigns that convert viewers into customers.</p>
+                </div>
+                
+                <div class="glass-card service-card fade-in">
+                    <div class="service-icon"><i class="fas fa-bolt"></i></div>
+                    <h3>24hr Delivery</h3>
+                    <p>Need it fast? Get your designs delivered within 24 hours for urgent projects.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <h2 class="fade-in">Our Portfolio</h2>
+            
+            <div class="portfolio-filters fade-in">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="gaming">Gaming</button>
+                <button class="filter-btn" data-filter="tech">Tech</button>
+                <button class="filter-btn" data-filter="vlogs">Vlogs</button>
+            </div>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item fade-in" data-category="thumbnail">
+                    <img src="/image /1.jpg" alt="Thumbnail 1">
+                    <div class="/image /2.jpg">
+                        <a href="#" class="view-project">View Project</a>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item fade-in" data-category="thumbnail">
+                    <img src="/image /2.jpg">
+                    <div class="portfolio-overlay">
+                        <a href="#" class="view-project">View Project</a>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item fade-in" data-category="vlogs">
+                    <img src="/image /3.jpg">
+                    <div class="portfolio-overlay">
+                        <a href="#" class="view-project">View Project</a>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item fade-in" data-category="thumbnail">
+                    <img src="/image /4.jpg">
+                    <div class="portfolio-overlay">
+                        <a href="#" class="view-project">View Project</a>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item fade-in" data-category="tech">
+                    <img src="/image /5.jpg">
+                    <div class="portfolio-overlay">
+                        <a href="#" class="view-project">View Project</a>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item fade-in" data-category="vlogs">
+                    <img src="/image /6.jpg">
+                    <div class="portfolio-overlay">
+                        <a href="#" class="view-project">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="fade-in">What Clients Say</h2>
+            
+            <div class="testimonials-container">
+                <div class="glass-card testimonial-card fade-in">
+                    <div class="client-info">
+                        <div class="client-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client Avatar">
+                        </div>
+                        <div>
+                            <div class="client-name">Alex Johnson</div>
+                            <div class="client-channel">Tech Reviews</div>
+                        </div>
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Rohit.gfx completely transformed my channel's look. My CTR increased by 40% after using their thumbnails. Highly recommended!"</p>
+                </div>
+                
+                <div class="glass-card testimonial-card fade-in">
+                    <div class="client-info">
+                        <div class="client-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client Avatar">
+                        </div>
+                        <div>
+                            <div class="client-name">Sarah Miller</div>
+                            <div class="client-channel">Gaming Channel</div>
+                        </div>
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"The thumbnails are so eye-catching! I've gained 10K subs in just 2 months since working with Rohit.gfx. Worth every penny!"</p>
+                </div>
+                
+                <div class="glass-card testimonial-card fade-in">
+                    <div class="client-info">
+                        <div class="client-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Client Avatar">
+                        </div>
+                        <div>
+                            <div class="client-name">David Kim</div>
+                            <div class="client-channel">Travel Vlogs</div>
+                        </div>
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p>"Professional service with quick turnaround. My videos are getting more clicks and the branding is perfectly consistent."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2 class="fade-in">Frequently Asked Questions</h2>
+            
+            <div class="faq-container">
+                <div class="glass-card faq-item fade-in">
+                    <div class="faq-question">
+                        <h3>How long does it take to get my thumbnails?</h3>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our standard delivery time is 2-3 days. However, we offer a 24-hour express service for urgent projects at an additional 30% fee.</p>
+                    </div>
+                </div>
+                
+                <div class="glass-card faq-item fade-in">
+                    <div class="faq-question">
+                        <h3>What information do you need to create my thumbnails?</h3>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We'll need your video title, any specific imagery you want included, your preferred style (bright/colorful/minimalist etc.), and your channel branding guidelines if available.</p>
+                    </div>
+                </div>
+                
+                <div class="glass-card faq-item fade-in">
+                    <div class="faq-question">
+                        <h3>Do you offer revisions?</h3>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! We include 2 rounds of revisions in all our packages to ensure you're completely satisfied with the final design.</p>
+                    </div>
+                </div>
+                
+                <div class="glass-card faq-item fade-in">
+                    <div class="faq-question">
+                        <h3>Can you match my existing channel branding?</h3>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely. We'll study your current branding and create thumbnails that maintain visual consistency while improving CTR.</p>
+                    </div>
+                </div>
+                
+                <div class="glass-card faq-item fade-in">
+                    <div class="faq-question">
+                        <h3>What file format will I receive?</h3>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You'll receive high-quality PNG files (1280x720px) optimized for YouTube, plus the original PSD file if you request it.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <h2 class="fade-in">Ready to 10X Your Click-Through Rate?</h2>
+            <p class="fade-in">Get professional thumbnails that make your videos stand out and attract more viewers.</p>
+            <a href="https://www.instagram.com/sohan_a218353?igsh=MTVybmV4amd6bGhhag==" class="btn fade-in">Contact Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">Rohit.gfx</div>
+                    <p>Professional YouTube thumbnail design studio helping creators boost their CTR with stunning, click-worthy designs.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/sohan_a218353?igsh=MTVybmV4amd6bGhhag==" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="mailto:rohitrohitbhakar@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Thumbnail Design</a></li>
+                        <li><a href="#">Channel Branding</a></li>
+                        <li><a href="#">CTR Optimization</a></li>
+                        <li><a href="#">24hr Delivery</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Rohit.gfx. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking a link
+        const mobileLinks = document.querySelectorAll('.mobile-menu a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
+        
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const mobileThemeToggle = document.getElementById('mobileThemeToggle');
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        
+        if (currentTheme === 'light') {
+            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            mobileThemeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+        
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            if (newTheme === 'light') {
+                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+                mobileThemeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+                mobileThemeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+        }
+        
+        themeToggle.addEventListener('click', toggleTheme);
+        mobileThemeToggle.addEventListener('click', toggleTheme);
+        
+        // Portfolio Filter
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                const filterValue = button.getAttribute('data-filter');
+                
+                portfolioItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', () => {
+                // Close all other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+        
+        // Scroll Animation
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        function checkScroll() {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+        
+        // Check on initial load
+        checkScroll();
+        
+        // Check on scroll
+        window.addEventListener('scroll', checkScroll);
+        
+        // Header Scroll Effect
+        const header = document.getElementById('header');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
